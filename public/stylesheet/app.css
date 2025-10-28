@@ -1,0 +1,27 @@
+/* #cluster-map {
+    width: 100%;
+    height: 500px;
+}
+
+#map {
+    width: 100%;
+    height: 300px;
+} */
+
+/* Full-bleed container to allow elements (like maps) to span the entire viewport width
+   while staying inside the document flow. Use on a wrapper around the #map element. */
+.full-bleed {
+    box-sizing: border-box;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding-left: 0; /* avoid extra padding from container */
+    padding-right: 0;
+}
+.full-bleed #map {
+    height: 500px; /* taller map for index page */
+}
+ 

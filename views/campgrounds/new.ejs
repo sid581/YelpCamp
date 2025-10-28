@@ -1,0 +1,53 @@
+<% layout('layouts/boilerplate') %>
+<div class="row">
+    <div class="text-center">
+        <h1>New Campground</h1>
+    </div>
+    <div class="col-6 offset-3">
+
+        <form action="/campground" method="POST" class="validation-form" enctype="multipart/form-data" novalidate>
+            <div class="mb-3">
+                <label class="form-label" for="title">Enter Title</label>
+                <input class="form-control" type="text" id="title" name="campground[title]" required>
+                <div class="valid-feedback">
+                    Looks Good
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="location">Enter Location</label>
+                <input class="form-control" type="text" id="location" name="campground[location]" required>
+                <div class="valid-feedback">
+                    Looks Good
+                </div>
+            </div>
+            
+            <div class="mb-3">
+                <label class="form-label" for="price">Price</label>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="price-label">$</span>
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="price" placeholder="0" name="campground[price]"
+                            required>
+                        <div class="valid-feedback">
+                            Looks Good
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="description">Description</label>
+                <textarea class="form-control" type="text" id="description" name="campground[description]"
+                    required> </textarea>
+                <div class="valid-feedback">
+                    Looks Good
+                </div>
+            </div>
+             <div>
+                 <label for="formFileLg" class="form-label">Upload Image</label>
+                 <input class="form-control form-control-lg" name="image" id="formFileLg" type="file" multiple>
+            </div>
+            <div class="mb-3"> <button class="btn btn-success">Submit</button></div>
+        </form>
+        <a href="/campground">All products</a>
+    </div>
+</div>
