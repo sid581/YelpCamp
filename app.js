@@ -20,7 +20,7 @@ const helmet = require('helmet');
 const userRoutes = require('./routes/user');
 const campgroundsRoutes = require('./routes/campground');
 const reviewsRoutes = require('./routes/review');
-const dbUrl=process.env.DB_URL || 'mongodb://127.0.0.1:27017/Yelpcamp';
+const dbUrl=process.env.DB_URL;
 //  mongodb://127.0.0.1:27017/Yelpcamp
 const MongoStore = require('connect-mongo');
 mongoose.connect(dbUrl)
@@ -164,7 +164,7 @@ app.use((err, req, res, next) => {
     res.status(statuscode).render('error', { err });
 })
 
-const port = process.env.PORT || 1000;
+const port = process.env.PORT;
 app.listen(port, (req, res) => {
     console.log(`Running on app ${port}`);
 })
