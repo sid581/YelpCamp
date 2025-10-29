@@ -23,12 +23,7 @@ const reviewsRoutes = require('./routes/review');
 const dbUrl=process.env.DB_URL || 'mongodb://127.0.0.1:27017/Yelpcamp';
 //  mongodb://127.0.0.1:27017/Yelpcamp
 const MongoStore = require('connect-mongo');
-mongoose.connect(dbUrl ,{
-    useNewUrlParser: true,
-    // useUnifiedTopology: true,
-    // useCreateIndex: true,
-    // useFindAndModify: false
-})
+mongoose.connect(dbUrl)
     .then(() => {
         console.log('Database Connection');
     })
@@ -168,7 +163,7 @@ app.use((err, req, res, next) => {
     res.status(statuscode).render('error', { err });
 })
 
-
-app.listen(1000, (req, res) => {
-    console.log('Running on app 1000 port');
+const port = process.env.PORT || 1000;
+app.listen(port, (req, res) => {
+    console.log(`Running on app ${port}`);
 })
